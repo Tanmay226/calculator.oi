@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using HTML CSS JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid rgb(128, 11, 11);
+            border-radius: 10px;
+            height: 25rem;
+            width: 26rem;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        .container:hover{
+            box-shadow: 0 0 5px gray;
+        }
+
+        .display {
+            margin-top: 10px;
+            width: 20rem;
+            display: flex;
+            height: 3rem;
+            border: 2px solid grey;
+            border-radius: 5px;
+            font-size: 2rem;
+        }
+
+        .display:active {
+            box-shadow: 0 0 5px grey;
+            border: 2px solid greenyellow;
+
+        }
+
+        .display:hover {
+            box-shadow: 0 0 5px grey;
+        }
+
+        .operator-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            gap: 35px;
+        }
+
+        .op-button {
+            margin-top: 10px;
+            height: 3rem;
+            width: 3rem;
+            border: 2px solid gray;
+            border-radius: 5px;
+            font-size: larger;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .op-button:hover {
+            box-shadow: 0 0 5px grey;
+        }
+        #Result{
+            margin-top: 10px;
+            width: 20rem;
+            display: flex;
+            height: 3rem;
+            border: 2px solid grey;
+            border-radius: 5px;
+            font-size: 2rem;   
+        }
+        #Result:hover{
+            box-shadow: 0 0 5px grey;
+
+        }
+        #Result:active{
+            box-shadow: 0 0 5px grey;
+            border: 2px solid greenyellow;   
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+
+        <input class="display" id="val1" />
+        <input class="display" id="val2" />
+        <br>
+        <div class="operator-button">
+            <button class="op-button" id="addbtn">Add</button>
+            <button class="op-button" id="subbtn">sub</button>
+            <button class="op-button" id="mulbtn">mul</button>
+            <button class="op-button" id="divbtn">div</button>
+        </div>
+        <p id="Result"> </p>
+    </div>
+    <script>
+        document.getElementById("addbtn").onclick = add2numbers;
+        document.getElementById("subbtn").onclick = sub2numbers;
+        document.getElementById("mulbtn").onclick = mul2numbers;
+        document.getElementById("divbtn").onclick = div2numbers;
+
+        function add2numbers() {
+            let a = document.getElementById("val1").value;
+            let b = document.getElementById("val2").value;
+            let res = parseInt(a) + parseInt(b);
+            document.getElementById("Result").innerHTML = res;
+
+        }
+        function sub2numbers() {
+            let a = document.getElementById("val1").value;
+            let b = document.getElementById("val2").value;
+            let res = parseInt(a) - parseInt(b);
+            document.getElementById("Result").innerHTML = res;
+
+        }
+        function mul2numbers() {
+            let a = document.getElementById("val1").value;
+            let b = document.getElementById("val2").value;
+            let res = parseInt(a) * parseInt(b);
+            document.getElementById("Result").innerHTML = res;
+
+        }
+        function div2numbers() {
+            let a = document.getElementById("val1").value;
+            let b = document.getElementById("val2").value;
+            let res = parseInt(a) / parseInt(b);
+            document.getElementById("Result").innerHTML = res;
+
+        }
+    </script>
+</body>
+
+</html>
